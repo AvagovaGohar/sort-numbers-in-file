@@ -3,7 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include "read_sort_input.cpp"
+#include "read_sort_input.h"
 
 int main(int argc, char* argv[])
 {
