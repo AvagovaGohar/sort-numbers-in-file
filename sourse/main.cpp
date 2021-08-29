@@ -3,6 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include "read_sort_input.cpp"
 
 int main(int argc, char* argv[])
 {
@@ -16,11 +17,11 @@ int main(int argc, char* argv[])
 	fs.open(argv[1]);
 	while (!fs.eof())
 	{
-		int size = read_from_file(fs, arr);
-		quick_sort(arr, 0, size);
-		input_in_file(arr, size);
+		int size = snif::read_from_file(fs, arr);
+		snif::quick_sort(arr, 0, size);
+		snif::input_in_file(arr, size);
 		arr.clear();
 	}
-	merge(argv[2]);
+	snif::merge(argv[2]);
 	fs.close();
 }
