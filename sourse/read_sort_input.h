@@ -1,5 +1,5 @@
-#ifndef MY_SORTING_CODE
-#define MY_SORTING_CODE
+#ifndef SNIF      // sort numbers in file
+#define SNIF
 
 #include <iostream>
 #include <sstream>
@@ -7,7 +7,7 @@
 #include <vector>
 #include <string>
 
-namespace snif //sort numbers in file
+namespace snif 
 {
   const int gegabyte = 268435356; // one gegabype
   const int size_of_one_arr = 52000000; // nearly 200 MB
@@ -28,6 +28,7 @@ namespace snif //sort numbers in file
     }
     return count;
   }
+  
   void input_in_file(std::vector<int>& arr, int size) {
     std::ofstream os;
     os.open(std::to_string(index) + "_file_name.txt");
@@ -38,6 +39,7 @@ namespace snif //sort numbers in file
     os.close();
     ++index;
   }
+  
   int quick_pivot(std::vector<int>& arr, int s, int e) {
     int i = s, e2 = e - 1;
     for (int j = s; j < e; ++j) {
@@ -49,6 +51,7 @@ namespace snif //sort numbers in file
     std::swap(arr[i], arr[e2]);
     return i;
   }
+  
   void quick_sort(std::vector<int>& arr, int s, int e) {
     if (s < e) {
       int pivot = quick_pivot(arr, s, e);
@@ -56,6 +59,7 @@ namespace snif //sort numbers in file
       quick_sort(arr, pivot + 1, e);
     }
   }
+  
   void merge(char* where) {
     std::vector<std::ifstream>files;
     files.reserve(index);
@@ -101,4 +105,4 @@ namespace snif //sort numbers in file
     sorted.close();
   }
 }
-#endif MY_SORTING_CODE
+#endif SNIF
