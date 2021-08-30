@@ -9,7 +9,7 @@ int main(int argc, char* argv[])
 {
 	
 	std::ofstream os(argv[1]);
-	for (int i = 0; i < gegabyte; ++i) {
+	for (int i = 0; i < snif::gegabyte; ++i) {
 		os << std::to_string(rand() % INT32_MAX/2)<<'\n';
 	}
 	std::vector<int> arr;
